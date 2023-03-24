@@ -19,3 +19,5 @@
    - 5번에서 홈 화면 관련 State를 useState로 관리하던 것을 useReducer로 관리하도록 변경
    - 상태 업데이트 로직을 분리하여 관리
    - use-reducer-logger를 활용해 useReducer 기록 콘솔에 가져오기(나타내기)
+7. Bootstrap 프레임워크 추가
+   - App.js -> header, main, footer 부트스트랩 UI 적용

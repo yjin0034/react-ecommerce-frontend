@@ -7,9 +7,9 @@
    - 4가지 예시 상품 추가
 3. Routing 추가
    - react-router-dom 활용
-   - 홈(메인) 화면(Homescreen), 상품 화면(ProductScreen) 경로 추가
+   - 홈(메인) 화면(Homescreen), 상품 상세보기 화면(ProductScreen) 관련 코드 및 경로(Routing) 추가
 4. Express Server 설치 및 백엔드 환경 구성
-   - 상품 목록 API 구현 - 단순히 상품 객체 데이터를 가져와서 화면에 뿌리는 API
+   - 상품 목록 API 구현 - 단순히 상품 객체 데이터를 가져와서 화면에 뿌리는 API. backend/server.js
 5. 백엔드의 상품 데이터를 가져와 프론트엔드 홈 화면에 상품 목록 구현하기
    - useEffect Hook, useState Hook, axios 활용
    - 백엔드의 데이터를 axios로 가져오기
@@ -25,3 +25,8 @@
    - Product 컴포넌트 : 상품 목록 렌더링 관련 기능
    - Rating 컴포넌트 : 상품 평점 및 상품 리뷰 렌더링 관련 기능
    - 해당 컴포넌트들 및 홈 화면 관련 코드에 부트스트랩 스타일 및 CSS 적용
+9. 상품 상세보기 화면(ProductScreen) 구현
+   - Backend -> 상품 상세보기 API 구현. backend/server.js
+   - Frontend -> 상품 상세보기 화면 구현. (홈 화면 코드와 유사하게 useReducer Hook 활용하여 State 관리)
+   - Helmet을 활용하여 각 페이지의 title 이름을 분리시켜 적용하기
+     - react-helmet-async 라이브러리 -> Helmet

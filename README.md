@@ -30,3 +30,7 @@
    - Frontend -> 상품 상세보기 화면 구현. (홈 화면 코드와 유사하게 useReducer Hook 활용하여 State 관리)
    - Helmet을 활용하여 각 페이지의 title 이름을 분리시켜 적용하기
      - react-helmet-async 라이브러리 -> Helmet
+10. 로딩 및 에러 처리 관련 컴포넌트 생성, 백엔드 에러 내용 가져와 처리하기
+
+- 로딩 및 에러 처리 관련 컴포넌트 : LoadingBox, MessageBox 컴포넌트
+- 백엔드 에러 처리 : frontend/src/utils.js

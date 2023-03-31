@@ -34,3 +34,10 @@
 
 - 로딩 및 에러 처리 관련 컴포넌트 : LoadingBox, MessageBox 컴포넌트
 - 백엔드 에러 처리 : frontend/src/utils.js
+
+11. 카트(장바구니)에 상품 추가를 위한 React Context 생성
+
+- React Context 생성 - frontend/src/Store.js
+- Store Provider 생성 - frontend/src/Store.js
+- useReducer 활용 - frontend/src/Store.js
+- 카트 담기 버튼 클릭 핸들러 추가

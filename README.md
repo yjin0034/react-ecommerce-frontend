@@ -9,7 +9,10 @@
    - react-router-dom 활용
    - 홈(메인) 화면(Homescreen), 상품 상세보기 화면(ProductScreen) 관련 코드 및 경로(Routing) 추가
 4. Express Server 설치 및 백엔드 환경 구성
-   - 상품 목록 API 구현 - 단순히 상품 객체 데이터를 가져와서 화면에 뿌리는 API. backend/server.js
+
+   - 상품 목록 API 구현 - 단순히 상품 객체 데이터를 가져와서 화면에 뿌리는 API.
+     - app.get('/api/products', (req, res) => {}); (-> backend/server.js)
+
 5. 백엔드의 상품 데이터를 가져와 프론트엔드 홈 화면에 상품 목록 구현하기
    - useEffect Hook, useState Hook, axios 활용
    - 백엔드의 데이터를 axios로 가져오기
@@ -26,7 +29,8 @@
    - Rating 컴포넌트 : 상품 평점 및 상품 리뷰 렌더링 관련 기능
    - 해당 컴포넌트들 및 홈 화면 관련 코드에 부트스트랩 스타일 및 CSS 적용
 9. 상품 상세보기 화면(ProductScreen) 구현
-   - Backend -> 상품 상세보기 API 구현. backend/server.js
+   - Backend -> 상품 상세보기 API 구현.
+     - app.get('/api/products/slug/:slug', (req, res) => {} (-> backend/server.js)
    - Frontend -> 상품 상세보기 화면 구현. (홈 화면 코드와 유사하게 useReducer Hook 활용하여 State 관리)
    - Helmet을 활용하여 각 페이지의 title 이름을 분리시켜 적용하기
      - react-helmet-async 라이브러리 -> Helmet
@@ -41,3 +45,12 @@
 - Store Provider 생성 - frontend/src/Store.js
 - useReducer 활용 - frontend/src/Store.js
 - 카트 담기 버튼 클릭 핸들러 추가
+
+12. 카트 상품 추가 기능 보완
+
+- 카트에 존재하는 상품인지 체크
+  - 이미 존재하는 상품이라면, (해당 상품을 따로 또 추가하는 것이 아니라) 해당 상품의 수량이 증가토록 하기
+- 백엔드에서 상품 재고 정보 가져오기 -> axios
+  - Backend -> 상품 id를 베이스로 하여 상품 정보를 반환하는 API 구현
+    - app.get('/api/products/:id', (req, res) => {} (-> backend/server.js)
+    - 상품 구분을 위한 id 필드 추가 : backend/data.js

@@ -29,6 +29,7 @@ const reducer = (state, action) => {
 
 export function ProductScreen() {
   const navigate = useNavigate();
+
   const params = useParams();
   const { slug } = params;
 
@@ -60,7 +61,7 @@ export function ProductScreen() {
 
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
-      window.alert('죄송합니다. 해당 상품은 품절 상품입니다.');
+      window.alert('죄송합니다. 해당 상품의 재고를 초과했습니다.');
       return;
     }
 

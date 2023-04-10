@@ -18,7 +18,7 @@
    - 상품 목록 API 구현 - 단순히 상품 객체 데이터를 가져와서 화면에 뿌리는 API
      - app.get('/api/products', (req, res) => {}); (-> backend/server.js)
 
-5. 백엔드의 상품 데이터를 가져와 프론트엔드 홈 화면에 상품 목록 구현하기
+5. 백엔드의 상품 데이터를 가져와, 프론트엔드 홈 화면에 상품 목록 구현하기
 
    - useEffect Hook, useState Hook, axios 활용
    - 백엔드의 데이터를 axios로 가져오기
@@ -37,8 +37,8 @@
 
 8. Product, Rating 컴포넌트 생성
 
-   - Product 컴포넌트 : 상품 목록 렌더링 관련 기능
-   - Rating 컴포넌트 : 상품 평점 및 상품 리뷰 렌더링 관련 기능
+   - Product 컴포넌트(frontend/src/Product.js) : 상품 목록 렌더링 관련 기능
+   - Rating 컴포넌트(frontend/src/Rating.js) : 상품 평점 및 상품 리뷰 렌더링 관련 기능
    - 해당 컴포넌트들 및 홈 화면 관련 코드에 부트스트랩 스타일 및 CSS 적용
 
 9. 상품 상세보기 화면(ProductScreen) 구현
@@ -59,12 +59,15 @@
 - 로딩 및 에러 처리 관련 컴포넌트 : LoadingBox, MessageBox 컴포넌트
 - 백엔드 에러 처리 : frontend/src/utils.js
 
-11. 카트(장바구니)에 상품 추가를 위한 React Context 생성
+11. 카트(장바구니) 상품 추가 기능 구현
 
-- React Context 생성 - frontend/src/Store.js
-- Store Provider 생성 - frontend/src/Store.js
-- useReducer 활용 - frontend/src/Store.js
-- 카트 담기 버튼 클릭 핸들러 추가
+- 상품 상세보기 화면 -> '카트에 담기' 버튼 클릭 시 상품이 카트에 추가되도록 구현
+  - '카트에 담기' 버튼 클릭 동작 관련 핸들러(addToCartHandler) 추가
+- 카트 상품 추가 기능을 위한 React Context 생성
+  - Store 컴포넌트(frontend/src/Store.js)
+    - useContext Hook 활용
+      - Provider 컴포넌트 활용
+    - useReducer 활용
 
 12. 카트 상품 추가 기능 보완
 
@@ -83,3 +86,14 @@
     - 상품 합계, 결제 진행 관련 Column
 - (상품 상세보기 화면에서) '카트에 담기' 버튼 클릭 시 /cart 경로로 이동시키기 기능 추가
   - useNavigate Hook 활용
+
+14. 카트 화면 및 카트 상품 추가 기능 보완
+
+- 카트 화면 기능 보완
+  - '플러스' 버튼 / '마이너스' 버튼 클릭 시 상품 수량이 변화되도록 구현
+  - '휴지통' 버튼 클릭 시 (카트에 담겨있던) 해당 상품이 제거되도록 구현
+  - 카트 관련 데이터 로컬 저장소에 저장하도록 구현
+  - '결제 진행' 버튼 클릭 시 로그인 화면 경로로 먼저 이동하도록 하기 -> 로그인에 성공하면, /shipping 경로로 redirect 하도록 함
+- 카트 상품 추가 기능 보완
+  - 홈 화면 -> '장바구니 담기' 버튼 클릭 시 상품이 카트에 추가되도록 구현
+  - 홈 화면 -> 상품의 재고가 없을 때, '품절' 표시(클릭 비활성화 버튼) 나타나도록 구현 - Product 컴포넌트 수정

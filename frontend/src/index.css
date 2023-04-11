@@ -46,6 +46,11 @@ main {
 .img-large {
   max-width: 100%;
 }
+
 .img-thumnail {
   height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
 }

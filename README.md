@@ -104,3 +104,8 @@
   - email, password
   - '로그인' 버튼
   - '회원가입 하기' 링크
+
+16. MongoDB 데이터베이스 연결
+
+- MongoDB Atalas : MongoDB 클라우드 데이터베이스
+- MongoDB Compass : MongoDB 로컬 데이터베이스
